@@ -1,12 +1,12 @@
 Nextflow Starter Template
 ======================
-This is a simple starter template for creating Nextflow projects. Feel free to fill in the blanks where needed, copy, or modify this template to suit your needs.
+This is a simple starter template for creating [Nextflow](https://www.nextflow.io) projects. By default, this program indexes a reference genome and aligns reads to a reference with [BWA](https://github.com/lh3/bwa). Feel free to fill in the blanks where needed, copy, or modify this template to suit your needs.
 
 Prerequisites
 ------------------
   - Nextflow
   - Java 1.7+
-  - Docker
+  - [Docker](https://docs.docker.com/engine/installation/)
 
 Quickstart
 ==========
