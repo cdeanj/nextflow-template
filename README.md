@@ -4,8 +4,8 @@ Nextflow Starter Template
 Prerequisites
 ------------------
   - Nextflow
-  - Java 1.7
-  - Docker (optional)
+  - Java 1.7+
+  - Docker
 
 Quickstart
 ==========
@@ -22,4 +22,10 @@ Clone Github Repository
 ```
 $ https://github.com/cdeanj/nextflow-template.git
 $ cd nextflow-template
+```
+
+Run Pipeline
+------------
+```
+$ nextflow run main.nf -profile template --threads 8 --output output
 ```
