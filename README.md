@@ -1,5 +1,6 @@
 Nextflow Starter Template
 ======================
+This is a simple starter template for creating Nextflow projects. Feel free to fill in the blanks where needed, copy, or modify this template to suit your needs.
 
 Prerequisites
 ------------------
@@ -33,5 +34,5 @@ $ docker pull chrisd/nextflow-template
 Run Pipeline
 ------------
 ```
-$ nextflow run main.nf -profile template --threads 8 --output output
+$ nextflow run main.nf -profile template --threads 8 --output output_dir
 ```
