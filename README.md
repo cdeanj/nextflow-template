@@ -24,6 +24,12 @@ $ https://github.com/cdeanj/nextflow-template.git
 $ cd nextflow-template
 ```
 
+Download Docker Image
+------------
+```
+$ docker pull chrisd/nextflow-template
+```
+
 Run Pipeline
 ------------
 ```
