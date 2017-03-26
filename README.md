@@ -36,3 +36,7 @@ Run Pipeline
 ```
 $ nextflow run main.nf -profile template --threads 8 --output output_dir
 ```
+
+Contact
+=======
+Feel free to send me an email at cdean11 AT rams DOT colostate DOT edu
