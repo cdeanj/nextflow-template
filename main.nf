@@ -2,8 +2,13 @@
 
 //General configuration variables
 params.help = ""
-params.read_pairs = ""
-params.genome = ""
+params.read_pairs = "$baseDir/data/raw/*_R{1,2}.fq"
+params.genome = "$baseDir/data/genome/*.fa"
+params.threads = 1
+params.output = "./output"
+
+genome = file(params.genome)
+threads = params.threads
 
 // Display help menu
 if(params.help) {
@@ -11,12 +16,13 @@ if(params.help) {
 	log.info 'Starter Template'
 	log.info ''
 	log.info 'Usage: '
-	log.info '    nextflow <main.nf> -profile <main> [options]'
+	log.info '    nextflow main.nf -profile template [options]'
 	log.info ''
 	log.info 'Script Options: '
-	log.info '    .         .		.'
-	log.info '    .         .               .'
-	log.info '    .         .               .'
+	log.info '    --reads_pairs	DIR	Path to FASTQ files'
+	log.info '    --genome		FILE	Path to reference genome'
+	log.info '    --threads		INT	Number of threads to use'
+	log.info '    --output		DIR	Directory to write output files'
 	log.info ''
 	return
 }
@@ -25,16 +31,34 @@ if(params.help) {
 Channel
         .fromFilePairs(params.read_pairs, flat: true)
 	.ifEmpty { exit 1, "Read pairs could not be found: ${params.read_pairs}" }
-        .into { channel_x }
+        .into { reads }
 
-process X {
-	
+// Index reference genome
+process IndexGenome {
+	input:
+	file genome
+
+	output:
+	file '*' into bwa_index
+
+	"""
+	bwa index ${genome}
+	"""
 }
 
-process Y {
+// Align reads to reference genome
+process AlignReads {
+	publishDir "${params.output}/Alignment", mode: "move", pattern: "*.sam"
 
-}
+	input:
+	set id, file(forward), file(reverse) from reads
+	file index from bwa_index.first()
+	file genome
 
-process Z {
+	output:
+	set id, file("${id}_alignment.sam")
 
+	"""
+	bwa mem ${genome} ${forward} ${reverse} -t ${threads} > ${id}_alignment.sam
+	"""
 }
