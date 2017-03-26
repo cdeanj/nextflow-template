@@ -27,7 +27,7 @@ if(params.help) {
 	return
 }
 
-// Write tuple of read pairs to channel_x
+// Write tuple of read pairs to the reads channel
 Channel
         .fromFilePairs(params.read_pairs, flat: true)
 	.ifEmpty { exit 1, "Read pairs could not be found: ${params.read_pairs}" }
