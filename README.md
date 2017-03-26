@@ -1,7 +1,5 @@
 Nextflow Starter Template
 ======================
-Starter template for creating Nextflow projects.
-----------
 
 Prerequisites
 ------------------
