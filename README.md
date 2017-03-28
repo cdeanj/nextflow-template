@@ -33,7 +33,7 @@ $ docker pull chrisd/nextflow-template
 or build the Dockerfile directly
 ```
 $ cd dockerfile
-$ docker build -t name/bwa
+$ docker build -t name/bwa .
 ```
 
 Run Pipeline
