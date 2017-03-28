@@ -42,8 +42,8 @@ Run Pipeline
 $ nextflow run main.nf -profile template --threads 8 --output output_dir
 ```
 
-Assembly Module
----------------
+Pipeline Options
+----------------
 Option | Description
 --------- | -----------
 help | `Display help message.`
