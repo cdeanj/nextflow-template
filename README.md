@@ -21,7 +21,7 @@ $ mv nextflow /usr/local/bin
 Clone Github Repository
 -----------------------
 ```
-$ https://github.com/cdeanj/nextflow-template.git
+$ git clone https://github.com/cdeanj/nextflow-template.git
 $ cd nextflow-template
 ```
 
