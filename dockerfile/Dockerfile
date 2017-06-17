@@ -1,29 +1,25 @@
-################################################################
-# Docker starter template
-################################################################
-FROM ubuntu:16.04
-MAINTAINER Chris Dean <cdean11@rams.colostate.edu>
+# Set the base image
+FROM debian:jessie-slim
 
-################################################################
+# Set image metadata
+LABEL author="Christopher Dean" \
+      description="BWA Docker image" \
+      maintainer="cdean11@colostate.edu"
+
 # Install core packages
-################################################################
 RUN apt-get update && apt-get install -y \
-	aufs-tools \
-        automake \
-        build-essential \
-        git \
-        libbz2-dev \
-	zlib1g-dev \
-	libncurses5-dev
+    build-essential \
+    ca-certificates \
+    git \
+    zlib1g-dev \
+ && rm -rf /var/lib/apt/lists/*
 
-################################################################
 # Install BWA
-################################################################
 RUN cd /opt && \
 	git clone https://github.com/lh3/bwa.git && \
         cd bwa && \
 	make && \
-	mv bwa /usr/local/bin && \
+	ln -s /opt/bwa/bwa /usr/local/bin && \
 	cd /
 
 RUN mkdir /SCRATCH
