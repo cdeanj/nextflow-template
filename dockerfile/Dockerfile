@@ -16,11 +16,11 @@ RUN apt-get update && apt-get install -y \
 
 # Install BWA
 RUN cd /opt && \
-	git clone https://github.com/lh3/bwa.git && \
-        cd bwa && \
-	make && \
-	ln -s /opt/bwa/bwa /usr/local/bin && \
-	cd /
+    git clone https://github.com/lh3/bwa.git && \
+    cd bwa && \
+    make && \
+    ln -s /opt/bwa/bwa /usr/local/bin && \
+    cd /
 
 RUN mkdir /SCRATCH
 WORKDIR /SCRATCH
