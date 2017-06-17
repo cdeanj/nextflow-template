@@ -1,3 +1,5 @@
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/cdeanj/nextflow-template/blob/master/LICENSE)
+
 Nextflow Starter Template
 =========================
 This is a simple starter template for creating [Nextflow](https://www.nextflow.io) projects. By default, this program indexes a reference genome and aligns reads to a reference with [BWA](https://github.com/lh3/bwa). Feel free to fill in the blanks where needed, copy, or modify this template to suit your needs.
@@ -25,19 +27,15 @@ $ git clone https://github.com/cdeanj/nextflow-template.git
 $ cd nextflow-template
 ```
 
-Download Docker Image
----------------------
-```
-$ docker pull chrisd/nextflow-template
-```
-or build the Dockerfile directly
+Build Docker Image
+------------------
 ```
 $ cd dockerfile
 $ docker build -t name/bwa .
 ```
 
-Run Pipeline
-------------
+Usage
+-----
 ```
 $ nextflow run main.nf -profile template --threads 8 --output output_dir
 ```
