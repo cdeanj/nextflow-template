@@ -38,7 +38,7 @@ $ docker build -t cdeanj/bwa .
 Usage
 -----
 ```
-$ nextflow run main.nf -profile template --threads 8 --output output_dir
+$ nextflow run . -profile template --threads 4 --output output
 ```
 
 Pipeline Options
