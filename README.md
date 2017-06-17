@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/cdeanj/nextflow-template/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/cdeanj/nextflow-template/blob/master/LICENSE)
 [![CircleCI](https://circleci.com/gh/cdeanj/nextflow-template/tree/master.svg?style=shield)](https://circleci.com/gh/cdeanj/nextflow-template/tree/master)
 
 Nextflow Starter Template
