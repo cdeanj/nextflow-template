@@ -1,0 +1,14 @@
+machine:
+  java:
+    version: oraclejdk8
+  services:
+    - docker
+  environment:
+    PROFILE: template
+
+test:
+  override:
+    - curl -fsSL get.nextflow.io | bash
+    - ./nextflow
+    - docker pull cdeanj/bwa
+    - ./nextflow alignment.nf -profile template --threads 4 --output output
