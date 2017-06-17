@@ -31,7 +31,7 @@ Build Docker Image
 ------------------
 ```
 $ cd dockerfile
-$ docker build -t name/bwa .
+$ docker build -t cdeanj/bwa .
 ```
 
 Usage
