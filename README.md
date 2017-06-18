@@ -1,15 +1,15 @@
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/cdeanj/nextflow-template/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/cdeanj/nextflow-template/blob/master/LICENSE)
 [![CircleCI](https://circleci.com/gh/cdeanj/nextflow-template/tree/master.svg?style=shield)](https://circleci.com/gh/cdeanj/nextflow-template/tree/master)
 
 Nextflow Starter Template
 =========================
-This is a simple starter template for creating [Nextflow](https://www.nextflow.io) projects. By default, this program indexes a reference genome and aligns reads to a reference with [BWA](https://github.com/lh3/bwa). Feel free to fill in the blanks where needed, copy, or modify this template to suit your needs.
+This is a simple starter template for creating [Nextflow](https://www.nextflow.io) projects with [Docker](https://docs.docker.com/engine/installation/). By default, this program indexes a reference genome and aligns reads to a reference with [BWA](https://github.com/lh3/bwa). Feel free to fill in the blanks where needed, copy, or modify this template to suit your needs.
 
 Prerequisites
 -------------
   - Nextflow
   - Java 1.7+
-  - [Docker](https://docs.docker.com/engine/installation/)
+  - Docker
 
 Quickstart
 ==========
@@ -28,17 +28,16 @@ $ git clone https://github.com/cdeanj/nextflow-template.git
 $ cd nextflow-template
 ```
 
-Build Docker Image
+Pull Docker Image
 ------------------
 ```
-$ cd dockerfile
-$ docker build -t cdeanj/bwa .
+$ docker pull cdeanj/bwa
 ```
 
 Usage
 -----
 ```
-$ nextflow run main.nf -profile template --threads 8 --output output_dir
+$ nextflow run . -profile template --threads 4 --output output
 ```
 
 Pipeline Options
