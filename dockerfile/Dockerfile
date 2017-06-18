@@ -21,7 +21,3 @@ RUN cd /opt && \
     make && \
     ln -s /opt/bwa/bwa /usr/local/bin && \
     cd /
-
-RUN mkdir /SCRATCH
-WORKDIR /SCRATCH
-CMD ["bash"]
